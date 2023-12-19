@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  # WIP - Do not uncomment
+  # bookd: 
+  #   build:
+  #     context: ./
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 3000:3000
+  #     - 4000:4000
+  #   container_name: bookd
+  #   volumes:
+  #     - ./:/node/bookd/
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     - WATCHPACK_POLLING=true
+  #     - CHOKIDAR_USEPOLLING=true
+  #   stdin_open: true
+  #   tty: true
+
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    ports:
+    - '5432:5432'
+
+    environment:
+      - POSTGRES_DB=bookd
+      - POSTGRES_USER=bookd
+      - POSTGRES_PASSWORD=bookd
+
+    volumes: 
+      - bookd:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    logging:
+      driver: none
+

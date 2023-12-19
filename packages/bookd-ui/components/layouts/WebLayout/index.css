@@ -1,0 +1,13 @@
+.web-layout {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+
+  .sidebar {
+    height: 100%;
+  }
+
+  .content {
+    width: 100%;
+  }
+}

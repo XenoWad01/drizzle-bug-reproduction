@@ -1,0 +1,19 @@
+.sidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .sidebar-header {
+    min-height: 250px;
+  }
+
+  .sidebar-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-footer {
+    min-height: 125px;
+  }
+}
